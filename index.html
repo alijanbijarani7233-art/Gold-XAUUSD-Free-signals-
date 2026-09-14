@@ -1,299 +1,484 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Trade With Ali 72 | Official Telegram</title>
+  <meta name="description" content="Trade With Ali 72 - Market Analysis, Trading Insights, Signals and Risk Management">
+  <title>Trade With Ali 72</title>
 
-<meta name="description" content="Trade With Ali 72 — Smart Trading, Market Analysis, Signals and Trading Insights.">
+  <!-- Urdu-friendly fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: #06130f;
+    }
 
-    background:
+    body {
+      color: #f3f0e5;
+      font-family:
+        Inter,
+        "Noto Naskh Arabic",
+        "Noto Nastaliq Urdu",
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100svh;
+      padding: 28px 16px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .card {
+      width: min(100%, 650px);
+      min-height: calc(100svh - 68px);
+      padding: 54px 42px 34px;
+
+      border: 1px solid rgba(229, 181, 52, 0.55);
+      border-radius: 42px;
+
+      background:
         radial-gradient(
-            circle at top,
-            #173d36 0%,
-            #071411 38%,
-            #020504 100%
+          circle at 50% 15%,
+          rgba(230, 174, 39, 0.12),
+          transparent 28%
+        ),
+        linear-gradient(145deg, #071711 0%, #06120e 100%);
+
+      box-shadow: 0 0 55px rgba(224, 171, 37, 0.07);
+
+      text-align: center;
+    }
+
+    /* A72 LOGO */
+
+    .logo {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 30px;
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      border: 5px solid #e5b634;
+
+      background:
+        radial-gradient(
+          circle at 35% 25%,
+          #f7dc77 0%,
+          #e5af22 38%,
+          #b87300 100%
         );
-}
 
-.card {
-    width: min(92%, 430px);
-    padding: 34px 24px;
-    text-align: center;
-    border-radius: 28px;
+      box-shadow:
+        0 0 0 9px #08120f,
+        0 0 0 13px #d9a92d,
+        0 0 35px rgba(231, 178, 44, 0.32);
 
-    background: rgba(8, 17, 14, 0.92);
+      position: relative;
+    }
 
-    border: 1px solid rgba(212, 170, 64, 0.55);
+    .logo::after {
+      content: "";
 
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.55);
-}
+      position: absolute;
+      inset: 22px;
 
-/* Logo */
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 50%;
+    }
 
-.logo {
-    width: 118px;
-    height: 118px;
+    .logo span {
+      direction: ltr;
 
-    margin: 0 auto 18px;
+      font-size: 58px;
+      font-weight: 800;
 
-    border-radius: 50%;
+      color: #080b0a;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
 
-    position: relative;
+    /* TITLE */
 
-    background:
+    h1 {
+      direction: ltr;
+
+      margin: 0;
+
+      color: #f1cf5e;
+
+      font-size: clamp(31px, 7vw, 48px);
+      line-height: 1.15;
+
+      font-weight: 800;
+    }
+
+    .handle {
+      direction: ltr;
+
+      margin: 12px 0 34px;
+
+      color: #e8e6df;
+
+      font-size: 23px;
+      font-weight: 500;
+    }
+
+    /* TAGS */
+
+    .tags {
+      direction: ltr;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 13px;
+
+      margin-bottom: 38px;
+    }
+
+    .tag {
+      padding: 12px 20px;
+
+      border-radius: 999px;
+
+      border: 1px solid #315b4f;
+
+      background: #0c211b;
+
+      color: #e8d889;
+
+      font-size: 17px;
+      font-weight: 600;
+
+      white-space: nowrap;
+    }
+
+    .tag .emoji {
+      margin-right: 7px;
+    }
+
+    /* SLOGAN */
+
+    .slogan {
+      direction: ltr;
+
+      margin: 0 0 28px;
+
+      color: #f0eee9;
+
+      font-size: clamp(21px, 5vw, 29px);
+      line-height: 1.35;
+
+      font-weight: 700;
+    }
+
+    /* URDU TEXT */
+
+    .urdu {
+      direction: rtl;
+      unicode-bidi: plaintext;
+
+      margin: 0 auto 40px;
+
+      max-width: 570px;
+
+      color: #e7e4dc;
+
+      font-family:
+        "Noto Naskh Arabic",
+        "Noto Nastaliq Urdu",
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+      font-size: clamp(21px, 5.4vw, 27px);
+
+      font-weight: 500;
+
+      line-height: 2.05;
+
+      overflow-wrap: anywhere;
+      word-break: normal;
+
+      text-align: center;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: grid;
+
+      gap: 18px;
+
+      direction: ltr;
+    }
+
+    .btn {
+      min-height: 76px;
+
+      width: 100%;
+
+      padding: 15px 22px;
+
+      border-radius: 23px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      text-decoration: none;
+
+      font-size: clamp(19px, 5vw, 25px);
+
+      font-weight: 800;
+
+      transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn:active {
+      transform: scale(0.985);
+    }
+
+    /* MAIN BUTTON */
+
+    .primary {
+      color: #0a120f;
+
+      background:
         linear-gradient(
-            145deg,
-            #fff0a8,
-            #d99d19 45%,
-            #7b4b05
+          90deg,
+          #f7d667,
+          #d99d16
         );
 
-    color: #10100a;
+      box-shadow:
+        0 8px 25px rgba(218, 163, 30, 0.15);
+    }
 
-    font-size: 38px;
-    font-weight: 900;
+    /* SECONDARY BUTTONS */
 
-    border: 7px solid #1b1b12;
+    .secondary {
+      color: #ebd66f;
 
-    outline: 3px solid #e4b83f;
+      background: #0c211b;
 
-    box-shadow:
-        0 0 30px rgba(229, 184, 63, 0.25);
-}
+      border: 1px solid #315b4f;
+    }
 
-.logo::after {
-    content: "";
+    /* WARNING */
 
-    position: absolute;
+    .note {
+      margin: 32px 0 0;
 
-    inset: 10px;
+      color: #a9ada7;
 
-    border: 1px solid #fff1a0;
+      font-size: 14px;
 
-    border-radius: 50%;
-}
+      line-height: 1.8;
+    }
 
-/* Heading */
+    /* MOBILE */
 
-h1 {
-    margin: 8px 0 5px;
+    @media (max-width: 520px) {
 
-    font-size: 29px;
+      .page {
+        padding: 14px 10px 28px;
+      }
 
-    color: #f4d46b;
-}
+      .card {
+        padding: 44px 18px 28px;
 
-.handle {
-    font-size: 16px;
+        border-radius: 30px;
 
-    color: #c9c9c9;
+        min-height: calc(100svh - 42px);
+      }
 
-    margin-bottom: 24px;
-}
+      .logo {
+        width: 178px;
+        height: 178px;
+      }
 
-/* Badges */
+      .logo span {
+        font-size: 48px;
+      }
 
-.badges {
-    display: flex;
+      .logo::after {
+        inset: 18px;
+      }
 
-    gap: 8px;
+      .handle {
+        margin-bottom: 27px;
+      }
 
-    justify-content: center;
+      .tags {
+        gap: 9px;
+        margin-bottom: 30px;
+      }
 
-    flex-wrap: wrap;
+      .tag {
+        padding: 9px 13px;
+        font-size: 15px;
+      }
 
-    margin-bottom: 22px;
-}
+      .urdu {
+        font-size: 21px;
 
-.badge {
-    padding: 8px 12px;
+        line-height: 2.12;
 
-    border-radius: 999px;
+        margin-bottom: 30px;
+      }
 
-    background: #13241e;
+      .btn {
+        min-height: 70px;
 
-    border: 1px solid #315f4e;
-
-    color: #f0d477;
-
-    font-size: 12px;
-}
-
-/* Text */
-
-p {
-    line-height: 1.65;
-
-    color: #d6d6d6;
-
-    margin: 12px 0;
-}
-
-/* Buttons */
-
-.buttons {
-    display: grid;
-
-    gap: 12px;
-
-    margin-top: 25px;
-}
-
-a {
-    text-decoration: none;
-
-    padding: 14px 18px;
-
-    border-radius: 14px;
-
-    font-weight: 700;
-
-    border: 1px solid #c99b2e;
-
-    color: #111;
-
-    background:
-        linear-gradient(
-            90deg,
-            #f4d36c,
-            #c8901d
-        );
-}
-
-a.secondary {
-    background: #11231d;
-
-    color: #f1d06a;
-
-    border-color: #3d735d;
-}
-
-/* Footer */
-
-.note {
-    font-size: 11px;
-
-    color: #888;
-
-    margin-top: 22px;
-}
-</style>
+        border-radius: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<main class="card">
+  <main class="page">
 
-    <!-- Profile Logo -->
-    <div class="logo">
-        A72
-    </div>
+    <section class="card">
 
-    <!-- Name -->
-    <h1>
+      <!-- LOGO -->
+
+      <div class="logo" aria-label="A72 logo">
+        <span>A72</span>
+      </div>
+
+      <!-- TITLE -->
+
+      <h1>
         Trade With Ali 72
-    </h1>
+      </h1>
 
-    <!-- Username -->
-    <div class="handle">
+      <div class="handle">
         @Alifx_72
-    </div>
+      </div>
 
-    <!-- Features -->
-    <div class="badges">
+      <!-- SERVICES -->
 
-        <span class="badge">
-            📊 Market Analysis
-        </span>
+      <div class="tags" aria-label="Services">
 
-        <span class="badge">
-            🎯 Trading Insights
-        </span>
+        <div class="tag">
+          <span class="emoji">📊</span>
+          Market Analysis
+        </div>
 
-        <span class="badge">
-            📈 Signals
-        </span>
+        <div class="tag">
+          <span class="emoji">🎯</span>
+          Trading Insights
+        </div>
 
-        <span class="badge">
-            🛡️ Risk Management
-        </span>
+        <div class="tag">
+          <span class="emoji">📈</span>
+          Signals
+        </div>
 
-    </div>
+        <div class="tag">
+          <span class="emoji">🛡️</span>
+          Risk Management
+        </div>
 
-    <!-- Main Message -->
+      </div>
 
-    <p>
-        <b>
-            Analyze Smart. Trade Smart. Grow Strong.
-        </b>
-    </p>
+      <!-- SLOGAN -->
 
-    <p>
-        مارکیٹ کے اہم مواقع، Trading Insights اور بہتر
-        Analysis ایک ہی جگہ۔
+      <p class="slogan">
+        Analyze Smart. Trade Smart. Grow Strong.
+      </p>
+
+      <!-- URDU DESCRIPTION -->
+
+      <p class="urdu">
+        اور بہتر Trading Insights کے ساتھ مارکیٹ کے اہم مواقع،
+        Analysis اور Strategy ایک جگہ۔
         Discipline، Strategy اور Risk Management کے ساتھ
         اپنی Trading Journey کو آگے بڑھائیں۔
-    </p>
+      </p>
 
-    <!-- Telegram Buttons -->
+      <!-- TELEGRAM BUTTONS -->
 
-    <div class="buttons">
+      <div class="buttons">
 
+        <!-- BOT -->
         <a
-            href="https://t.me/Tradewithali22bot"
-            target="_blank"
+          class="btn primary"
+          href="https://t.me/Alifx_72"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            🤖 Open Telegram Bot
+          🤖 Open Telegram Bot
         </a>
 
+        <!-- GROUP -->
         <a
-            class="secondary"
-            href="https://t.me/+XqT_b60tm70zNjJk"
-            target="_blank"
+          class="btn secondary"
+          href="https://t.me/Alifx_72"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            📢 Join Telegram Group
+          📢 Join Telegram Group
         </a>
 
+        <!-- CONTACT -->
         <a
-            class="secondary"
-            href="https://t.me/Alifx_72"
-            target="_blank"
+          class="btn secondary"
+          href="https://t.me/Alifx_72"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            👤 Contact @Alifx_72
+          👤 Contact @Alifx_72
         </a>
 
-    </div>
+      </div>
 
-    <!-- Disclaimer -->
+      <!-- WARNING -->
 
-    <div class="note">
+      <p class="note">
         ⚠️ Trading involves risk.
         Trade responsibly.
         This page is for informational purposes.
-    </div>
+      </p>
 
-</main>
+    </section>
+
+  </main>
 
 </body>
-</
+    </html>
