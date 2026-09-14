@@ -1,89 +1,299 @@
-import os
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import (
-    Application,
-    CommandHandler,
-    ContextTypes,
-)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+<title>Trade With Ali 72 | Official Telegram</title>
 
-GROUP_LINK = "https://t.me/+XqT_b60tm70zNjJk"
-USERNAME = "@Alifx_72"
+<meta name="description" content="Trade With Ali 72 — Smart Trading, Market Analysis, Signals and Trading Insights.">
 
+<style>
+* {
+    box-sizing: border-box;
+}
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    keyboard = [
-        [
-            InlineKeyboardButton(
-                "📢 Join Our Telegram Group",
-                url=GROUP_LINK
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                "📊 Trade With Ali 72",
-                url="https://t.me/Tradewithali22bot"
-            )
-        ]
-    ]
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
+    background:
+        radial-gradient(
+            circle at top,
+            #173d36 0%,
+            #071411 38%,
+            #020504 100%
+        );
+}
 
-    text = (
-        "👑 *TRADE WITH ALI 72*\n\n"
-        "📊 Smart Trading • Market Analysis • Trading Insights\n\n"
-        "🎯 بہتر Analysis اور Discipline کے ساتھ "
-        "اپنی Trading Journey کو آگے بڑھائیں۔\n\n"
-        "💎 *Analysis • Strategy • Discipline • Growth*\n\n"
-        f"📲 Official: {USERNAME}\n\n"
-        "⚠️ Trading involves risk. Trade responsibly."
-    )
+.card {
+    width: min(92%, 430px);
+    padding: 34px 24px;
+    text-align: center;
+    border-radius: 28px;
 
-    await update.message.reply_text(
-        text,
-        parse_mode="Markdown",
-        reply_markup=reply_markup
-    )
+    background: rgba(8, 17, 14, 0.92);
 
+    border: 1px solid rgba(212, 170, 64, 0.55);
 
-async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "📚 *Trade With Ali 72 Help*\n\n"
-        "/start - Bot شروع کریں\n"
-        "/help - Help دیکھیں\n\n"
-        "📊 Market Analysis & Trading Insights\n"
-        "👑 @Alifx_72",
-        parse_mode="Markdown"
-    )
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+}
 
+/* Logo */
 
-async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "❌ Command سمجھ نہیں آئی۔\n\n"
-        "Bot شروع کرنے کے لیے /start دبائیں۔"
-    )
+.logo {
+    width: 118px;
+    height: 118px;
 
+    margin: 0 auto 18px;
 
-def main():
-    if not BOT_TOKEN:
-        raise ValueError("BOT_TOKEN is not configured.")
+    border-radius: 50%;
 
-    app = Application.builder().token(BOT_TOKEN).build()
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("help", help_command))
+    position: relative;
 
-    app.add_handler(
-        CommandHandler(
-            "unknown",
-            unknown
-        )
-    )
+    background:
+        linear-gradient(
+            145deg,
+            #fff0a8,
+            #d99d19 45%,
+            #7b4b05
+        );
 
-    print("🤖 Trade With Ali 72 Bot is running...")
-    app.run_polling()
+    color: #10100a;
 
+    font-size: 38px;
+    font-weight: 900;
 
-if __name__ == "__main__":
-    main()
+    border: 7px solid #1b1b12;
+
+    outline: 3px solid #e4b83f;
+
+    box-shadow:
+        0 0 30px rgba(229, 184, 63, 0.25);
+}
+
+.logo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border: 1px solid #fff1a0;
+
+    border-radius: 50%;
+}
+
+/* Heading */
+
+h1 {
+    margin: 8px 0 5px;
+
+    font-size: 29px;
+
+    color: #f4d46b;
+}
+
+.handle {
+    font-size: 16px;
+
+    color: #c9c9c9;
+
+    margin-bottom: 24px;
+}
+
+/* Badges */
+
+.badges {
+    display: flex;
+
+    gap: 8px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 22px;
+}
+
+.badge {
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: #13241e;
+
+    border: 1px solid #315f4e;
+
+    color: #f0d477;
+
+    font-size: 12px;
+}
+
+/* Text */
+
+p {
+    line-height: 1.65;
+
+    color: #d6d6d6;
+
+    margin: 12px 0;
+}
+
+/* Buttons */
+
+.buttons {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+a {
+    text-decoration: none;
+
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    border: 1px solid #c99b2e;
+
+    color: #111;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f4d36c,
+            #c8901d
+        );
+}
+
+a.secondary {
+    background: #11231d;
+
+    color: #f1d06a;
+
+    border-color: #3d735d;
+}
+
+/* Footer */
+
+.note {
+    font-size: 11px;
+
+    color: #888;
+
+    margin-top: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+    <!-- Profile Logo -->
+    <div class="logo">
+        A72
+    </div>
+
+    <!-- Name -->
+    <h1>
+        Trade With Ali 72
+    </h1>
+
+    <!-- Username -->
+    <div class="handle">
+        @Alifx_72
+    </div>
+
+    <!-- Features -->
+    <div class="badges">
+
+        <span class="badge">
+            📊 Market Analysis
+        </span>
+
+        <span class="badge">
+            🎯 Trading Insights
+        </span>
+
+        <span class="badge">
+            📈 Signals
+        </span>
+
+        <span class="badge">
+            🛡️ Risk Management
+        </span>
+
+    </div>
+
+    <!-- Main Message -->
+
+    <p>
+        <b>
+            Analyze Smart. Trade Smart. Grow Strong.
+        </b>
+    </p>
+
+    <p>
+        مارکیٹ کے اہم مواقع، Trading Insights اور بہتر
+        Analysis ایک ہی جگہ۔
+        Discipline، Strategy اور Risk Management کے ساتھ
+        اپنی Trading Journey کو آگے بڑھائیں۔
+    </p>
+
+    <!-- Telegram Buttons -->
+
+    <div class="buttons">
+
+        <a
+            href="https://t.me/Tradewithali22bot"
+            target="_blank"
+        >
+            🤖 Open Telegram Bot
+        </a>
+
+        <a
+            class="secondary"
+            href="https://t.me/+XqT_b60tm70zNjJk"
+            target="_blank"
+        >
+            📢 Join Telegram Group
+        </a>
+
+        <a
+            class="secondary"
+            href="https://t.me/Alifx_72"
+            target="_blank"
+        >
+            👤 Contact @Alifx_72
+        </a>
+
+    </div>
+
+    <!-- Disclaimer -->
+
+    <div class="note">
+        ⚠️ Trading involves risk.
+        Trade responsibly.
+        This page is for informational purposes.
+    </div>
+
+</main>
+
+</body>
+</html>
