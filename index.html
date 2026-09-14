@@ -1,15 +1,89 @@
-<template>
-  <div class="github-repo">
-    <!-- Header -->
-    <header class="navbar">
-      <div class="nav-left">
-        <div class="logo">🐙</div>
-        <span>...</span>
-        <span class="repo-name">Gold-XAU...</span>
-      </div>
-      <div class="nav-right">
-        <button class="icon-btn">🔍</button>
-        <button class="icon-btn">📦</button>
-        <div class="avatar"></div>
-      </div>
-    </
+import os
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import (
+    Application,
+    CommandHandler,
+    ContextTypes,
+)
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+GROUP_LINK = "https://t.me/+XqT_b60tm70zNjJk"
+USERNAME = "@Alifx_72"
+
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = [
+        [
+            InlineKeyboardButton(
+                "📢 Join Our Telegram Group",
+                url=GROUP_LINK
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                "📊 Trade With Ali 72",
+                url="https://t.me/Tradewithali22bot"
+            )
+        ]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    text = (
+        "👑 *TRADE WITH ALI 72*\n\n"
+        "📊 Smart Trading • Market Analysis • Trading Insights\n\n"
+        "🎯 بہتر Analysis اور Discipline کے ساتھ "
+        "اپنی Trading Journey کو آگے بڑھائیں۔\n\n"
+        "💎 *Analysis • Strategy • Discipline • Growth*\n\n"
+        f"📲 Official: {USERNAME}\n\n"
+        "⚠️ Trading involves risk. Trade responsibly."
+    )
+
+    await update.message.reply_text(
+        text,
+        parse_mode="Markdown",
+        reply_markup=reply_markup
+    )
+
+
+async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "📚 *Trade With Ali 72 Help*\n\n"
+        "/start - Bot شروع کریں\n"
+        "/help - Help دیکھیں\n\n"
+        "📊 Market Analysis & Trading Insights\n"
+        "👑 @Alifx_72",
+        parse_mode="Markdown"
+    )
+
+
+async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "❌ Command سمجھ نہیں آئی۔\n\n"
+        "Bot شروع کرنے کے لیے /start دبائیں۔"
+    )
+
+
+def main():
+    if not BOT_TOKEN:
+        raise ValueError("BOT_TOKEN is not configured.")
+
+    app = Application.builder().token(BOT_TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("help", help_command))
+
+    app.add_handler(
+        CommandHandler(
+            "unknown",
+            unknown
+        )
+    )
+
+    print("🤖 Trade With Ali 72 Bot is running...")
+    app.run_polling()
+
+
+if __name__ == "__main__":
+    main()
