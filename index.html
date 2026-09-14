@@ -1,569 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <meta name="description" content="Trade With Ali 72 - Market Analysis, Trading Insights, Signals and Risk Management">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trade With Ali 72</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
     body {
       margin: 0;
-      padding: 0;
-      min-height: 100%;
-      background: #06130f;
-    }
-
-    body {
-      color: #f3f0e5;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      overflow-x: hidden;
-    }
-
-    .page {
-      min-height: 100svh;
-      padding: 28px 16px 40px;
-
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .card {
-      width: min(100%, 650px);
-
-      min-height: calc(100svh - 68px);
-
-      padding: 54px 42px 34px;
-
-      border: 1px solid rgba(229, 181, 52, 0.55);
-
-      border-radius: 42px;
-
-      background:
-        radial-gradient(
-          circle at 50% 15%,
-          rgba(230, 174, 39, 0.12),
-          transparent 28%
-        ),
-        linear-gradient(
-          145deg,
-          #071711 0%,
-          #06120e 100%
-        );
-
-      box-shadow:
-        0 0 55px rgba(224, 171, 37, 0.07);
-
+      padding: 25px 15px;
+      background: #111827;
+      color: white;
+      font-family: Arial, sans-serif;
       text-align: center;
     }
 
-
-    /* =========================
-       A72 LOGO
-    ========================= */
-
-    .logo {
-      width: 220px;
-      height: 220px;
-
-      margin: 0 auto 30px;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      border: 5px solid #e5b634;
-
-      background:
-        radial-gradient(
-          circle at 35% 25%,
-          #f7dc77 0%,
-          #e5af22 38%,
-          #b87300 100%
-        );
-
-      box-shadow:
-        0 0 0 9px #08120f,
-        0 0 0 13px #d9a92d,
-        0 0 35px rgba(231, 178, 44, 0.32);
-
-      position: relative;
+    .box {
+      max-width: 420px;
+      margin: 50px auto;
     }
-
-    .logo::after {
-      content: "";
-
-      position: absolute;
-
-      inset: 22px;
-
-      border: 1px solid rgba(255, 255, 255, 0.55);
-
-      border-radius: 50%;
-    }
-
-    .logo span {
-      direction: ltr;
-
-      font-size: 58px;
-
-      font-weight: 800;
-
-      color: #080b0a;
-
-      position: relative;
-
-      z-index: 2;
-    }
-
-
-    /* =========================
-       TITLE
-    ========================= */
 
     h1 {
-      margin: 0;
-
-      color: #f1cf5e;
-
-      font-size: clamp(
-        31px,
-        7vw,
-        48px
-      );
-
-      line-height: 1.15;
-
-      font-weight: 800;
+      font-size: 25px;
+      margin-bottom: 10px;
     }
 
-    .handle {
-      margin: 12px 0 34px;
-
-      color: #e8e6df;
-
-      font-size: 23px;
-
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       SERVICE TAGS
-    ========================= */
-
-    .tags {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      justify-content: center;
-
-      gap: 13px;
-
-      margin-bottom: 38px;
-    }
-
-    .tag {
-      padding: 12px 20px;
-
-      border-radius: 999px;
-
-      border: 1px solid #315b4f;
-
-      background: #0c211b;
-
-      color: #e8d889;
-
-      font-size: 17px;
-
-      font-weight: 600;
-
-      white-space: nowrap;
-    }
-
-    .tag .emoji {
-      margin-right: 7px;
-    }
-
-
-    /* =========================
-       SLOGAN
-    ========================= */
-
-    .slogan {
-      margin: 0 0 28px;
-
-      color: #f0eee9;
-
-      font-size: clamp(
-        21px,
-        5vw,
-        29px
-      );
-
-      line-height: 1.35;
-
-      font-weight: 700;
-    }
-
-
-    /* =========================
-       ENGLISH DESCRIPTION
-    ========================= */
-
-    .description {
-      max-width: 570px;
-
-      margin: 0 auto 40px;
-
-      color: #e7e4dc;
-
-      font-size: clamp(
-        19px,
-        4.7vw,
-        25px
-      );
-
-      font-weight: 500;
-
-      line-height: 1.8;
-
-      text-align: center;
-    }
-
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .buttons {
-      display: grid;
-
-      gap: 18px;
+    p {
+      color: #cbd5e1;
+      margin-bottom: 30px;
     }
 
     .btn {
-      min-height: 76px;
-
+      display: block;
       width: 100%;
-
-      padding: 15px 22px;
-
-      border-radius: 23px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 9px;
-
+      box-sizing: border-box;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 12px;
+      border: none;
+      font-size: 17px;
+      font-weight: bold;
       text-decoration: none;
-
-      font-size: clamp(
-        19px,
-        5vw,
-        25px
-      );
-
-      font-weight: 800;
-
-      transition:
-        transform 0.15s ease,
-        filter 0.15s ease;
-
-      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      filter: brightness(1.08);
+    .vip {
+      background: #22c55e;
+      color: white;
     }
 
-    .btn:active {
-      transform: scale(0.985);
+    .view {
+      background: #3b82f6;
+      color: white;
     }
-
-
-    /* MAIN BUTTON */
-
-    .primary {
-      color: #0a120f;
-
-      background:
-        linear-gradient(
-          90deg,
-          #f7d667,
-          #d99d16
-        );
-
-      box-shadow:
-        0 8px 25px
-        rgba(218, 163, 30, 0.15);
-    }
-
-
-    /* SECONDARY BUTTONS */
-
-    .secondary {
-      color: #ebd66f;
-
-      background: #0c211b;
-
-      border: 1px solid #315b4f;
-    }
-
-
-    /* =========================
-       WARNING
-    ========================= */
-
-    .note {
-      margin: 32px 0 0;
-
-      color: #a9ada7;
-
-      font-size: 14px;
-
-      line-height: 1.8;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 520px) {
-
-      .page {
-        padding: 14px 10px 28px;
-      }
-
-      .card {
-        padding: 44px 18px 28px;
-
-        border-radius: 30px;
-
-        min-height:
-          calc(100svh - 42px);
-      }
-
-      .logo {
-        width: 178px;
-        height: 178px;
-      }
-
-      .logo span {
-        font-size: 48px;
-      }
-
-      .logo::after {
-        inset: 18px;
-      }
-
-      .handle {
-        margin-bottom: 27px;
-      }
-
-      .tags {
-        gap: 9px;
-
-        margin-bottom: 30px;
-      }
-
-      .tag {
-        padding: 9px 13px;
-
-        font-size: 15px;
-      }
-
-      .description {
-        font-size: 19px;
-
-        line-height: 1.8;
-
-        margin-bottom: 30px;
-      }
-
-      .btn {
-        min-height: 70px;
-
-        border-radius: 20px;
-      }
-
-    }
-
   </style>
 </head>
 
-
 <body>
 
-  <main class="page">
+  <div class="box">
 
-    <section class="card">
+    <h1>🚀 Trade With Ali 72</h1>
 
+    <p>
+      Join our official channel below 👇
+    </p>
 
-      <!-- =========================
-           LOGO
-      ========================= -->
+    <a
+      class="btn vip"
+      href="https://t.me/+XqT_b60tm70zNjJk"
+      target="_blank">
+      🟢 Join VIP Signal
+    </a>
 
-      <div
-        class="logo"
-        aria-label="A72 logo"
-      >
-        <span>A72</span>
-      </div>
+    <a
+      class="btn view"
+      href="https://t.me/+XqT_b60tm70zNjJk"
+      target="_blank">
+      🔵 Join View Signal
+    </a>
 
+  </div>
 
-      <!-- =========================
-           TITLE
-      ========================= -->
+  <script>
+    const tg = window.Telegram.WebApp;
 
-      <h1>
-        Trade With Ali 72
-      </h1>
-
-
-      <div class="handle">
-        @Alifx_72
-      </div>
-
-
-      <!-- =========================
-           SERVICES
-      ========================= -->
-
-      <div class="tags">
-
-        <div class="tag">
-          <span class="emoji">📊</span>
-          Market Analysis
-        </div>
-
-        <div class="tag">
-          <span class="emoji">🎯</span>
-          Trading Insights
-        </div>
-
-        <div class="tag">
-          <span class="emoji">📈</span>
-          Signals
-        </div>
-
-        <div class="tag">
-          <span class="emoji">🛡️</span>
-          Risk Management
-        </div>
-
-      </div>
-
-
-      <!-- =========================
-           SLOGAN
-      ========================= -->
-
-      <p class="slogan">
-        Analyze Smart. Trade Smart. Grow Strong.
-      </p>
-
-
-      <!-- =========================
-           ENGLISH DESCRIPTION
-      ========================= -->
-
-      <p class="description">
-
-        Get better Trading Insights with
-        important market opportunities,
-        Analysis and Strategy in one place.
-
-        Build your Trading Journey with
-        Discipline, Strategy and Risk Management.
-
-      </p>
-
-
-      <!-- =========================
-           TELEGRAM CHANNEL BUTTONS
-      ========================= -->
-
-      <div class="buttons">
-
-
-        <!-- DIRECT TO TELEGRAM CHANNEL -->
-
-        <a
-          class="btn primary"
-          href="https://t.me/Alifx_72"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          🤖 Open Telegram Channel
-        </a>
-
-
-        <!-- DIRECT TO TELEGRAM CHANNEL -->
-
-        <a
-          class="btn secondary"
-          href="https://t.me/Alifx_72"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          📢 Join Telegram Channel
-        </a>
-
-
-        <!-- DIRECT TO TELEGRAM CHANNEL -->
-
-        <a
-          class="btn secondary"
-          href="https://t.me/Alifx_72"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          👤 Visit @Alifx_72
-        </a>
-
-
-      </div>
-
-
-      <!-- =========================
-           WARNING
-      ========================= -->
-
-      <p class="note">
-
-        ⚠️ Trading involves risk.
-        Trade responsibly.
-        This page is for informational purposes.
-
-      </p>
-
-
-    </section>
-
-  </main>
+    tg.ready();
+    tg.expand();
+  </script>
 
 </body>
 </html>
